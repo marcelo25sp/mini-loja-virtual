@@ -1,0 +1,17 @@
+# Eclipse
+/.metadata
+/.classpath
+/.project
+/.settings/
+
+# Binários e compilados
+/bin/
+/build/
+
+# Arquivos temporários
+*.class
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
