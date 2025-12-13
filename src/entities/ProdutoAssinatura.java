@@ -22,7 +22,8 @@ public class ProdutoAssinatura extends Produto {
 
 	@Override
 	public double calcularPrecoFinal() {
-		return 0; // em construção
+		double total = getPreco() * meses;
+		return total - (descontoPorMes * meses);
 	}
 
 }
