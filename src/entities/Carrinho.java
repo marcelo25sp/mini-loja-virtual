@@ -17,4 +17,12 @@ public class Carrinho {
 		}
 	}
 
+	public double calculoTotal() {
+		double total = 0.0;
+		for (Produto p : itens) {
+			total += p.calcularPrecoFinal();
+		}
+		return total;
+	}
+
 }
