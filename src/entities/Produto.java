@@ -1,6 +1,6 @@
 package entities;
 
-public class Produto {
+public abstract class Produto {
 
 	private int id;
 	private String nome;
@@ -55,6 +55,8 @@ public class Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+
+	public abstract double calcularPrecoFinal(); // método em construção
 
 	@Override
 	public String toString() {
