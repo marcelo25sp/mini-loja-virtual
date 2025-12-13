@@ -33,7 +33,12 @@ public class Main {
 			switch (opcao) {
 
 			case 1:
-				System.out.println("Cadastrar Produto: (em construção)");
+				// em construção
+				System.out.println("Cadastrar Produto:");
+				System.out.println("\nEscolha o tipo de produto:");
+				System.out.println("1. Produto Físico");
+				System.out.println("2. Produto Digital");
+				System.out.println("3. Produto por assinatura");
 				break;
 			case 2:
 				System.out.println("Listar produtos: (em construção)");
