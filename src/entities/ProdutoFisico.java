@@ -22,7 +22,7 @@ public class ProdutoFisico extends Produto {
 
 	@Override
 	public double calcularPrecoFinal() {
-		return 0; // em construção
+		return getPreco() * custoFrete;
 	}
 
 }
