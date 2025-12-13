@@ -2,20 +2,20 @@ package entities;
 
 public class Cliente {
 
-	private int id;
+	private int idCliente;
 	private String nome;
 	private String email;
 	private Carrinho carrinho;
 
-	public Cliente(int id, String nome, String email) {
-		this.id = id;
+	public Cliente(int idCliente, String nome, String email) {
+		this.idCliente = idCliente;
 		this.nome = nome;
 		this.email = email;
 		this.carrinho = carrinho;
 	}
 
-	public int getId() {
-		return id;
+	public int getIdCliente() {
+		return idCliente;
 	}
 
 	public String getNome() {
