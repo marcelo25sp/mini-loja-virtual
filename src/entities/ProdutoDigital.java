@@ -13,7 +13,7 @@ public class ProdutoDigital extends Produto{
 
 	@Override
 	public double calcularPrecoFinal() {
-		return 0;
+		return 0; // em construção
 	}
 
 }
