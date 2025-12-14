@@ -1,14 +1,16 @@
 package entities;
 
+import entities.enums.Categoria;
+
 public abstract class Produto {
 
 	private int id;
 	private String nome;
 	private double preco;
 	private int quantidade;
-	private String categoria;
+	private Categoria categoria;
 
-	public Produto(int id, String nome, double preco, int quantidade, String categoria) {
+	public Produto(int id, String nome, double preco, int quantidade, Categoria categoria) {
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
@@ -32,7 +34,7 @@ public abstract class Produto {
 		return quantidade;
 	}
 
-	public String getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
@@ -52,7 +54,7 @@ public abstract class Produto {
 		this.quantidade = quantidade;
 	}
 
-	public void setCategoria(String categoria) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
 

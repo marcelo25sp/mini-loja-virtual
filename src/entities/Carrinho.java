@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Carrinho {
+	
+	public Carrinho() {		
+	}
 
 	private List<Produto> itens = new ArrayList<>();
 
@@ -13,7 +16,7 @@ public class Carrinho {
 
 	public void listarProdutos() {
 		for (Produto p : itens) {
-			System.out.println(p);
+			System.out.println(p); // mensagem provisória (em construção) 
 		}
 	}
 

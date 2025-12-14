@@ -1,11 +1,13 @@
 package entities;
 
+import entities.enums.Categoria;
+
 public class ProdutoAssinatura extends Produto {
 
 	private int meses;
 	private double descontoPorMes;
 
-	public ProdutoAssinatura(int id, String nome, double preco, int quantidade, String categoria, int meses,
+	public ProdutoAssinatura(int id, String nome, double preco, int quantidade, Categoria categoria, int meses,
 			double descontoPorMes) {
 		super(id, nome, preco, quantidade, categoria);
 		this.meses = meses;
