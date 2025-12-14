@@ -16,9 +16,9 @@ public class Main {
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
+
 		Carrinho carrinho = new Carrinho();
-		
+
 		int opcao = -1; // atribuição provisória a variável para forçar e entrada no looping
 
 		// looping de interação com o usuário
@@ -41,8 +41,8 @@ public class Main {
 
 			switch (opcao) {
 
-			case 1:				
-				
+			case 1:
+
 				System.out.println("Cadastrar Produto: (1. Físico/ 2. Digital/ 3. Assinatura) ");
 				System.out.print("Escolha o tipo de produto: ");
 				int tipo = sc.nextInt();
@@ -56,39 +56,46 @@ public class Main {
 				sc.nextLine();
 				System.out.print("Categoria: (ELETRONICO/ROUPA/LIVRO/SOFTWARE/SERVICO) ");
 				Categoria categoria = Categoria.valueOf(sc.next().toUpperCase());
-				
-				if(tipo == 1) {
+
+				if (tipo == 1) {
 					System.out.print("Peso: (g) ");
 					double peso = sc.nextDouble();
 					System.out.print("Custo do frete: (R$) ");
 					double custoFrete = sc.nextDouble();
-					ProdutoFisico produto = new ProdutoFisico(quantidade, nome, preco, quantidade, categoria, peso, custoFrete);
+					ProdutoFisico produto = new ProdutoFisico(quantidade, nome, preco, quantidade, categoria, peso,
+							custoFrete);
 					carrinho.adicionarProduto(produto);
-				}else if(tipo == 2) {
+				} else if (tipo == 2) {
 					System.out.print("Tamanho do arquivo (MB): ");
 					double tamanhoArquivo = sc.nextDouble();
 					System.out.print("Taxa digital: (R$) ");
 					double taxaDigital = sc.nextDouble();
-					ProdutoDigital produto = new ProdutoDigital(quantidade, nome, preco, quantidade, categoria, tamanhoArquivo, taxaDigital);
+					ProdutoDigital produto = new ProdutoDigital(quantidade, nome, preco, quantidade, categoria,
+							tamanhoArquivo, taxaDigital);
 					carrinho.adicionarProduto(produto);
-				}else {
+				} else {
 					System.out.print("Meses: ");
 					int meses = sc.nextInt();
 					System.out.print("Desconto por mês: (R$) ");
 					double descontoPorMes = sc.nextDouble();
-					ProdutoAssinatura produto = new ProdutoAssinatura(quantidade, nome, preco, quantidade, categoria, meses, descontoPorMes);
+					ProdutoAssinatura produto = new ProdutoAssinatura(quantidade, nome, preco, quantidade, categoria,
+							meses, descontoPorMes);
 					carrinho.adicionarProduto(produto);
 				}
-				
+
 				System.out.println("Produto cadastrado com sucesso!");
-				System.out.println("-------------------------------");	
+				System.out.println("-------------------------------");
 				System.out.println();
-				
+
 				break;
-				
+
 			case 2:
+				
 				System.out.println("Listar produtos: (em construção)");
+				carrinho.listarProdutos();
+				
 				break;
+				
 			case 3:
 				System.out.println("Buscar produtos por código: (em construção)");
 				break;
