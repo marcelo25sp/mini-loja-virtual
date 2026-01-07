@@ -62,8 +62,7 @@ public abstract class Produto {
 
 	@Override
 	public String toString() {
-		return "Produto [id=" + id + ", nome=" + nome + ", preco=" + preco + ", quantidade=" + quantidade
-				+ ", categoria=" + categoria + "]";
+		return String.format("Código: %d | Produto: %s | Categoria: %s | Quantidade: %d | Preço final: R$ %.2f%n ", id, nome, categoria, quantidade, calcularPrecoFinal());
 	}
 
 }
