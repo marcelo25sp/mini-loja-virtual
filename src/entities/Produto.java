@@ -58,7 +58,7 @@ public abstract class Produto {
 		this.categoria = categoria;
 	}
 
-	public abstract double calcularPrecoFinal(); // método em construção
+	public abstract double calcularPrecoFinal(); // polimorfismo
 
 	@Override
 	public String toString() {

@@ -19,7 +19,7 @@ public class Main {
 
 		Carrinho carrinho = new Carrinho();
 
-		int opcao = -1; // atribuição provisória a variável para forçar e entrada no looping
+		int opcao = -1; // atribuição provisória à variável opção para forçar e entrada no looping
 
 		// looping de interação com o usuário
 		while (opcao != 0) {
@@ -36,7 +36,7 @@ public class Main {
 			System.out.println("6. Filtrar produtos:");
 			System.out.println("0. Sair:");
 
-			System.out.print("\nDigite a opção: ");
+			System.out.print("\nEntre com a opção desejada: ");
 			opcao = sc.nextInt();
 
 			switch (opcao) {
@@ -91,8 +91,9 @@ public class Main {
 
 			case 2:
 				
-				System.out.println("Listar produtos: (em construção)");
+				System.out.println("Lista de produtos:");
 				carrinho.listarProdutos();
+				System.out.printf("Preço final: R$ %.2f\n", carrinho.calculoTotal());
 				
 				break;
 				
