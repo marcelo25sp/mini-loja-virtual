@@ -27,5 +27,14 @@ public class Carrinho {
 		}
 		return total;
 	}
+	
+	public Produto buscarProdutoPorId(int id) {
+		for(Produto p : itens) {
+			if(p.getId() == id) {
+				return p;
+			}
+		}
+		return null;
+	}
 
 }
