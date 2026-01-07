@@ -24,7 +24,7 @@ public class ProdutoDigital extends Produto {
 
 	@Override
 	public double calcularPrecoFinal() {
-		return getPreco() * taxaDigital;
+		return (getPreco() * getQuantidade()) + taxaDigital;
 	}
 
 }
