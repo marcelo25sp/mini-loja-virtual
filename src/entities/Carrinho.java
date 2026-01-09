@@ -3,6 +3,8 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import entities.enums.Categoria;
+
 public class Carrinho {
 	
 	public Carrinho() {		
@@ -47,6 +49,21 @@ public class Carrinho {
 		
 		return false;				
 				
+	}
+	
+	public boolean editarProdutoPorId(int id, String nome, double preco, int quantidade, Categoria categoria) {
+		Produto produto = buscarProdutoPorId(id);
+		
+		if(produto != null) {
+			produto.setNome(nome);
+			produto.setPreco(id);
+			produto.setPreco(preco);
+			produto.setQuantidade(quantidade);
+			produto.setCategoria(categoria);
+			return true;
+		}
+		
+		return false;		
 	}
 
 }

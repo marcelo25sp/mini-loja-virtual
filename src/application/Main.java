@@ -30,10 +30,9 @@ public class Main {
 			System.out.println();
 			System.out.println("1. Cadastrar produto:");
 			System.out.println("2. Listar produtos:");
-			System.out.println("3. Buscar produto por código:");
+			System.out.println("3. Remover produto:");
 			System.out.println("4. Editar produto:");
-			System.out.println("5. Remover produto:");
-			System.out.println("6. Filtrar produtos:");
+			System.out.println("5. Filtrar produtos:");
 			System.out.println("0. Sair:");
 
 			System.out.print("\nEntre com a opção desejada: ");
@@ -98,6 +97,7 @@ public class Main {
 				break;
 				
 			case 3:
+				
 				System.out.print("Informe o ID do produto a ser removido: ");
 				int id = sc.nextInt();
 				
@@ -111,7 +111,39 @@ public class Main {
 				break;
 				
 			case 4:
-				System.out.println("Editar produto: (em construção)");
+				
+				System.out.print("Informe o ID do produto: ");
+				int idEditar = sc.nextInt();
+				sc.nextLine();
+				
+				Produto produto = carrinho.buscarProdutoPorId(idEditar);
+				
+				if(produto == null) {
+					System.out.println("Produto não encontrado!");
+					break;
+				}
+				
+				System.out.print("Novo nome: ");
+				String novoNome = sc.nextLine();
+				
+				System.out.print("Novo preço: ");
+				double novoPreco = sc.nextDouble();
+				
+				System.out.print("Nova quantidade: ");
+				int novaQuantidade = sc.nextInt();
+				sc.nextLine();
+				
+				System.out.print("Categoria: (ELETRONICO/SERVICO/ROUPA/SERVICO/SOFTWARE) ");
+				Categoria novaCategoria = Categoria.valueOf(sc.next().toUpperCase());
+				
+				boolean editado = carrinho.editarProduto(idEditar, novoNome, novoPreco, novaQuantidade, novaCategoria);
+				
+				if(editado) {
+					System.out.println("Produto atualizado com sucesso!");
+				}else {
+					System.out.println("Produto não encontrado!");
+				}
+				
 				break;
 			case 5:
 				System.out.println("Remover produto: (em construção)");
