@@ -36,5 +36,17 @@ public class Carrinho {
 		}
 		return null;
 	}
+	
+	public boolean removerProdutoPorId(int id) {
+		Produto produto = buscarProdutoPorId(id);
+		
+		if(produto != null) {
+			itens.remove(produto);
+			return true;
+		}
+		
+		return false;				
+				
+	}
 
 }

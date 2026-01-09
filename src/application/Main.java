@@ -98,8 +98,18 @@ public class Main {
 				break;
 				
 			case 3:
-				System.out.println("Buscar produtos por código: (em construção)");
+				System.out.print("Informe o ID do produto a ser removido: ");
+				int id = sc.nextInt();
+				
+				boolean removido = carrinho.removerProdutoPorId(id);
+				
+				if(removido) {
+					System.out.println("Produto removido com sucesso!");
+				}else {
+					System.out.println("Produto não encontrado!");
+				}				
 				break;
+				
 			case 4:
 				System.out.println("Editar produto: (em construção)");
 				break;
