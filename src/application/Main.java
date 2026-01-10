@@ -25,17 +25,18 @@ public class Main {
 		while (opcao != 0) {
 
 			System.out.println("====================================");
-			System.out.println("=========MINI LOJA VIRTUAL==========");
+			System.out.println("         MINI LOJA VIRTUAL          ");
 			System.out.println("====================================");
 			System.out.println();
-			System.out.println("1. Cadastrar produto:");
-			System.out.println("2. Listar produtos:");
-			System.out.println("3. Remover produto:");
-			System.out.println("4. Editar produto:");
-			System.out.println("5. Filtrar produtos:");
-			System.out.println("0. Sair:");
+			System.out.println("1. Cadastrar produtos");
+			System.out.println("2. Listar produtos");
+			System.out.println("3. Remover produto");
+			System.out.println("4. Editar produto");
+			System.out.println("5. Filtrar produtos");
+			System.out.println("0. Sair");
+			System.out.println("------------------------------------");
 
-			System.out.print("\nEntre com a opção desejada: ");
+			System.out.print("Entre com a opção desejada: ");
 			opcao = sc.nextInt();
 
 			switch (opcao) {
@@ -93,6 +94,7 @@ public class Main {
 				System.out.println("Lista de produtos:");
 				carrinho.listarProdutos();
 				System.out.printf("Preço final: R$ %.2f\n", carrinho.calculoTotal());
+				System.out.println("-------------------------------");
 				
 				break;
 				
@@ -107,7 +109,8 @@ public class Main {
 					System.out.println("Produto removido com sucesso!");
 				}else {
 					System.out.println("Produto não encontrado!");
-				}				
+				}		
+				System.out.println("-------------------------------");
 				break;
 				
 			case 4:
@@ -143,14 +146,15 @@ public class Main {
 				}else {
 					System.out.println("Produto não encontrado!");
 				}
+				System.out.println("-------------------------------");
 				
 				break;
 			case 5:
-				System.out.println("Remover produto: (em construção)");
+				System.out.println("Filtrar produto: (em construção)");
+				System.out.println("-------------------------------");
+				
 				break;
-			case 6:
-				System.out.println("Filtrar produtos: (em construção)");
-				break;
+
 			case 0:
 				System.out.println("Saindo do programa... (em construção)");
 				break;

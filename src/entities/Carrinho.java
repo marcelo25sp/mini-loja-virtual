@@ -51,7 +51,7 @@ public class Carrinho {
 				
 	}
 	
-	public boolean editarProdutoPorId(int id, String nome, double preco, int quantidade, Categoria categoria) {
+	public boolean editarProduto(int id, String nome, double preco, int quantidade, Categoria categoria) {
 		Produto produto = buscarProdutoPorId(id);
 		
 		if(produto != null) {
