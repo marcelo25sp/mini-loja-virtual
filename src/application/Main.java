@@ -38,6 +38,7 @@ public class Main {
 
 			System.out.print("Entre com a opção desejada: ");
 			opcao = sc.nextInt();
+			System.out.println();
 
 			switch (opcao) {
 
@@ -90,76 +91,89 @@ public class Main {
 				break;
 
 			case 2:
-				
+
 				System.out.println("Lista de produtos:");
 				carrinho.listarProdutos();
 				System.out.printf("Preço final: R$ %.2f\n", carrinho.calculoTotal());
 				System.out.println("-------------------------------");
-				
+
 				break;
-				
+
 			case 3:
-				
+
 				System.out.print("Informe o ID do produto a ser removido: ");
 				int id = sc.nextInt();
-				
+
 				boolean removido = carrinho.removerProdutoPorId(id);
-				
-				if(removido) {
+
+				if (removido) {
 					System.out.println("Produto removido com sucesso!");
-				}else {
+				} else {
 					System.out.println("Produto não encontrado!");
-				}		
+				}
 				System.out.println("-------------------------------");
 				break;
-				
+
 			case 4:
-				
+
 				System.out.print("Informe o ID do produto: ");
 				int idEditar = sc.nextInt();
 				sc.nextLine();
-				
+
 				Produto produto = carrinho.buscarProdutoPorId(idEditar);
-				
-				if(produto == null) {
+
+				if (produto == null) {
 					System.out.println("Produto não encontrado!");
 					break;
 				}
-				
+
 				System.out.print("Novo nome: ");
 				String novoNome = sc.nextLine();
-				
+
 				System.out.print("Novo preço: ");
 				double novoPreco = sc.nextDouble();
-				
+
 				System.out.print("Nova quantidade: ");
 				int novaQuantidade = sc.nextInt();
 				sc.nextLine();
-				
+
 				System.out.print("Categoria: (ELETRONICO/SERVICO/ROUPA/SERVICO/SOFTWARE) ");
 				Categoria novaCategoria = Categoria.valueOf(sc.next().toUpperCase());
-				
+
 				boolean editado = carrinho.editarProduto(idEditar, novoNome, novoPreco, novaQuantidade, novaCategoria);
-				
-				if(editado) {
+
+				if (editado) {
 					System.out.println("Produto atualizado com sucesso!");
-				}else {
+				} else {
 					System.out.println("Produto não encontrado!");
 				}
 				System.out.println("-------------------------------");
-				
+
 				break;
+
 			case 5:
-				System.out.println("Filtrar produto: (em construção)");
+				System.out.println("Selecione a categoria:");
+				System.out.println("(ELETRONICO | ROUPA | SERVICO | LIVRO | SOFTWARE)");
+				System.out.print("Digite a categoria: ");
+
+				categoria = Categoria.valueOf(sc.next().toUpperCase());
+				carrinho.filtrarPorCategoria(categoria);
+
+				System.out.println("\nPressiona ENTER para continuar...");
+				sc.nextLine(); // limpa o buffer
+				sc.nextLine(); // espera o click ENTER
+
 				System.out.println("-------------------------------");
-				
+
 				break;
 
 			case 0:
 				System.out.println("Saindo do programa... (em construção)");
+
 				break;
+
 			default:
-				System.out.println("Opção inválida! Digite novamente: (em construção)");
+				System.out.println("Opção inválida!");
 				break;
 
 			}
