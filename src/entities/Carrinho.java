@@ -65,5 +65,20 @@ public class Carrinho {
 		
 		return false;		
 	}
+	
+	public void filtrarPorCategoria(Categoria categoria) {
+		boolean encontrado = false;
+		
+		for(Produto p : itens) {
+			if(p.getCategoria() == categoria) {
+				System.out.println(p);
+				encontrado = true;
+			}
+		}
+		
+		if(!encontrado) {
+			System.out.println("Nenhum produto encontrado com a categoria solicitada!");
+		}
+	}
 
 }
