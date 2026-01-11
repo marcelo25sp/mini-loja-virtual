@@ -33,6 +33,7 @@ public class Main {
 			System.out.println("3. Remover produto");
 			System.out.println("4. Editar produto");
 			System.out.println("5. Filtrar produtos");
+			System.out.println("6. Exibir relatório do carrinho");
 			System.out.println("0. Sair");
 			System.out.println("------------------------------------");
 
@@ -152,6 +153,7 @@ public class Main {
 				break;
 
 			case 5:
+
 				System.out.println("Selecione a categoria:");
 				System.out.println("(ELETRONICO | ROUPA | SERVICO | LIVRO | SOFTWARE)");
 				System.out.print("Digite a categoria: ");
@@ -159,9 +161,20 @@ public class Main {
 				categoria = Categoria.valueOf(sc.next().toUpperCase());
 				carrinho.filtrarPorCategoria(categoria);
 
-				System.out.println("\nPressiona ENTER para continuar...");
+				System.out.println("\nPressione ENTER para continuar...");
 				sc.nextLine(); // limpa o buffer
 				sc.nextLine(); // espera o click ENTER
+
+				System.out.println("-------------------------------");
+
+				break;
+
+			case 6:
+
+				carrinho.exibirResumo();
+				System.out.println("\nPressione ENTER para continuar...");
+				sc.nextLine();
+				sc.nextLine();
 
 				System.out.println("-------------------------------");
 
