@@ -80,5 +80,27 @@ public class Carrinho {
 			System.out.println("Nenhum produto encontrado com a categoria solicitada!");
 		}
 	}
+	
+	public void exibirResumo() {
+		if(itens.isEmpty()) {
+			System.out.println("Carrinho vazio");
+			return;
+		}
+		
+		double total = 0.0;
+		int totalItens = 0;
+		
+		System.out.println("===== RESUMO DO CARRINHO =====");
+		
+		for(Produto p : itens) {
+			System.out.println(p);
+			total += p.getPreco() * p.getQuantidade();
+			totalItens += p.getQuantidade();
+		}
+		
+		System.out.println("--------------------------------------");
+		System.out.printf("Total de Itens: %d unidades\n", totalItens);
+		System.out.printf("Valor total a pagar: R$ %.2f%n", total);
+	}
 
 }
