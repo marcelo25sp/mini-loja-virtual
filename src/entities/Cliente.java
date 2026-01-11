@@ -11,7 +11,7 @@ public class Cliente {
 		this.idCliente = idCliente;
 		this.nome = nome;
 		this.email = email;
-		this.carrinho = carrinho;
+		this.carrinho = new Carrinho();
 	}
 
 	public int getIdCliente() {
