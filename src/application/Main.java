@@ -182,7 +182,7 @@ public class Main {
 				break;
 
 			case 0:
-				System.out.println("Saindo do programa... (em construção)");
+				System.out.println("Saindo do programa...");
 
 				break;
 
