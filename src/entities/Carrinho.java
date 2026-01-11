@@ -17,8 +17,13 @@ public class Carrinho {
 	}
 
 	public void listarProdutos() {
+		if(itens.isEmpty()) {
+			System.out.println("Nenhum produto cadastrado!");
+			return;
+		}
+		
 		for (Produto p : itens) {
-			System.out.println(p); // mensagem provisória (em construção) 
+			System.out.println(p); 
 		}
 	}
 
@@ -92,8 +97,10 @@ public class Carrinho {
 		System.out.println("===== RESUMO DO CARRINHO =====");
 		
 		for(Produto p : itens) {
-			System.out.println(p);
-			total += p.calcularPrecoFinal();
+			double precoFinal = p.calcularPrecoFinal();
+			
+			System.out.printf("Produto: %s | Quantidade: %d | Preço final: R$ %.2f%n", p.getNome(), p.getQuantidade(), precoFinal);
+			total += precoFinal;
 			totalItens += p.getQuantidade();
 		}
 		

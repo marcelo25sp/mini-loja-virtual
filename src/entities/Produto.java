@@ -62,7 +62,7 @@ public abstract class Produto {
 
 	@Override
 	public String toString() {
-		return String.format("Código: %d | Produto: %s | Categoria: %s | Quantidade: %d | Preço final: R$ %.2f%n ", id, nome, categoria, quantidade, calcularPrecoFinal());
+		return String.format("Código: %d | Produto: %s | Categoria: %s | Quantidade: %d | Preço unitário: R$ %.2f%n ", id, nome, categoria, quantidade, preco);
 	}
 
 }
