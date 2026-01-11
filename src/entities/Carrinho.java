@@ -93,7 +93,7 @@ public class Carrinho {
 		
 		for(Produto p : itens) {
 			System.out.println(p);
-			total += p.getPreco() * p.getQuantidade();
+			total += p.calcularPrecoFinal();
 			totalItens += p.getQuantidade();
 		}
 		
