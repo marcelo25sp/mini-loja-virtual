@@ -11,8 +11,11 @@ public class Carrinho {
 	}
 
 	private List<Produto> itens = new ArrayList<>();
+	private int proximoId = 1;
 
 	public void adicionarProduto(Produto produto) {
+		produto.setId(proximoId);
+		proximoId++;
 		itens.add(produto);
 	}
 

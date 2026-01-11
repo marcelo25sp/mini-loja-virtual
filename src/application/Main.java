@@ -65,7 +65,7 @@ public class Main {
 					double peso = sc.nextDouble();
 					System.out.print("Custo do frete: (R$) ");
 					double custoFrete = sc.nextDouble();
-					ProdutoFisico produto = new ProdutoFisico(proximoId++, nome, preco, quantidade, categoria, peso,
+					ProdutoFisico produto = new ProdutoFisico(nome, preco, quantidade, categoria, peso,
 							custoFrete);
 					carrinho.adicionarProduto(produto);
 				} else if (tipo == 2) {
@@ -73,7 +73,7 @@ public class Main {
 					double tamanhoArquivo = sc.nextDouble();
 					System.out.print("Taxa digital: (R$) ");
 					double taxaDigital = sc.nextDouble();
-					ProdutoDigital produto = new ProdutoDigital(proximoId++, nome, preco, quantidade, categoria,
+					ProdutoDigital produto = new ProdutoDigital(nome, preco, quantidade, categoria,
 							tamanhoArquivo, taxaDigital);
 					carrinho.adicionarProduto(produto);
 				} else {
@@ -81,7 +81,7 @@ public class Main {
 					int meses = sc.nextInt();
 					System.out.print("Desconto por mês: (R$) ");
 					double descontoPorMes = sc.nextDouble();
-					ProdutoAssinatura produto = new ProdutoAssinatura(proximoId++, nome, preco, quantidade, categoria,
+					ProdutoAssinatura produto = new ProdutoAssinatura(nome, preco, quantidade, categoria,
 							meses, descontoPorMes);
 					carrinho.adicionarProduto(produto);
 				}

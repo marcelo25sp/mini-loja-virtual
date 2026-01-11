@@ -10,8 +10,7 @@ public abstract class Produto {
 	private int quantidade;
 	private Categoria categoria;
 
-	public Produto(int id, String nome, double preco, int quantidade, Categoria categoria) {
-		this.id = id;
+	public Produto(String nome, double preco, int quantidade, Categoria categoria) {
 		this.nome = nome;
 		this.preco = preco;
 		this.quantidade = quantidade;
