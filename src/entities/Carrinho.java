@@ -56,7 +56,6 @@ public class Carrinho {
 		
 		if(produto != null) {
 			produto.setNome(nome);
-			produto.setPreco(id);
 			produto.setPreco(preco);
 			produto.setQuantidade(quantidade);
 			produto.setCategoria(categoria);
