@@ -18,27 +18,16 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		Carrinho carrinho = new Carrinho();
+		Menu menu = new Menu();
 
 		int opcao = -1; // atribuição provisória à variável opção para forçar e entrada no looping
 		int proximoId = 1;
 
 		// looping de interação com o usuário
 		while (opcao != 0) {
-
-			System.out.println("====================================");
-			System.out.println("         MINI LOJA VIRTUAL          ");
-			System.out.println("====================================");
-			System.out.println();
-			System.out.println("1. Cadastrar produtos");
-			System.out.println("2. Listar produtos");
-			System.out.println("3. Remover produto");
-			System.out.println("4. Editar produto");
-			System.out.println("5. Filtrar produtos");
-			System.out.println("6. Exibir relatório do carrinho");
-			System.out.println("0. Sair");
-			System.out.println("------------------------------------");
-
-			System.out.print("Entre com a opção desejada: ");
+			
+			// exibição do menu
+			menu.exibirMenuPrincipal();
 			opcao = sc.nextInt();
 			System.out.println();
 
