@@ -86,23 +86,21 @@ Valor total: R$ 725.00
 ## 📂 Estrutura do Projeto
 
 src/
+
 ├── application
-│ ├── Main.java
-│ └── Menu.java
-│
+  ├── Main.java
+  └── Menu.java 
 ├── entities
-│ ├── Produto.java
-│ ├── ProdutoFisico.java
-│ ├── ProdutoDigital.java
-│ ├── ProdutoAssinatura.java
-│ ├── Carrinho.java
-│ └── Cliente.java
-│
+  ├── Produto.java
+  ├── ProdutoFisico.java
+  ├── ProdutoDigital.java
+  ├── ProdutoAssinatura.java
+  ├── Carrinho.java
+  └── Cliente.java
 ├── entities.enums
-│ └── Categoria.java
-│
+  └── Categoria.java
 └── services
-└── GerenciamentoLoja.java
+  └── GerenciamentoLoja.java
 
 ---
 
