@@ -122,6 +122,39 @@ Interaja com o sistema pelo console
 
 
 ```
+application.Main
+
+```
+
+🔄 Versionamento
+
+Versão atual: 1.0
+
+Próxima versão planejada:
+
+DTOs para exibição
+
+Melhorias de UX no menu
+
+Validações mais robustas
+
+Evolução da arquitetura conforme novos aprendizados
+
+📌 Autor
+
+Marcelo Nascimento
+Estudante de Análise e Desenvolvimento de Sistemas
+Foco em Backend Java ☕
+
+🔗 LinkedIn: https://www.linkedin.com/in/marcelo-nascimento-gomes
+
+💻 GitHub: https://github.com/marcelo25sp
+
+⭐ Considerações Finais
+
+Este projeto representa uma etapa importante da minha evolução como desenvolvedor Java, reforçando conceitos fundamentais de POO, organização de código e boas práticas.
+
+Sugestões e feedbacks são muito bem-vindos!
 
 
 
