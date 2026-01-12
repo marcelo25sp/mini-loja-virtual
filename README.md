@@ -105,5 +105,24 @@ src/
 ---
 
 
+---
+
+## ▶️ Como Executar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+2. Abra o projeto em uma IDE Java (Eclipse, IntelliJ ou VS Code)
+
+3. Execute a classe:
+
+  application.Main
+
+Interaja com o sistema pelo console
+
+
+```
+
+
 
 
