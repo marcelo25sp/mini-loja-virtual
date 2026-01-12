@@ -57,20 +57,20 @@ public class GerenciamentoLoja {
 		System.out.println("Produto cadastrado com sucesso!");
 		System.out.println("-------------------------------");
 		System.out.println();
-		
+
 	}
-	
+
 	public void listarProdutos(Scanner sc) {
-		
+
 		System.out.println("Lista de produtos:");
 		carrinho.listarProdutos();
 		System.out.printf("Preço final: R$ %.2f\n", carrinho.calculoTotal());
 		System.out.println("-------------------------------");
-		
+
 	}
-	
+
 	public void removerProdutos(Scanner sc) {
-		
+
 		System.out.print("Informe o ID do produto a ser removido: ");
 		int id = sc.nextInt();
 
@@ -82,11 +82,11 @@ public class GerenciamentoLoja {
 			System.out.println("Produto não encontrado!");
 		}
 		System.out.println("-------------------------------");
-		
+
 	}
-	
+
 	public void editarProdutos(Scanner sc) {
-		
+
 		System.out.print("Informe o ID do produto: ");
 		int idEditar = sc.nextInt();
 		sc.nextLine();
@@ -94,7 +94,7 @@ public class GerenciamentoLoja {
 		Produto produto = carrinho.buscarProdutoPorId(idEditar);
 
 		if (produto == null) {
-			System.out.println("Produto não encontrado!");			
+			System.out.println("Produto não encontrado!");
 		}
 
 		System.out.print("Novo nome: ");
@@ -118,11 +118,11 @@ public class GerenciamentoLoja {
 			System.out.println("Produto não encontrado!");
 		}
 		System.out.println("-------------------------------");
-		
+
 	}
-	
+
 	public void filtrarProdutos(Scanner sc) {
-		
+
 		System.out.println("Selecione a categoria:");
 		System.out.println("(ELETRONICO | ROUPA | SERVICO | LIVRO | SOFTWARE)");
 		System.out.print("Digite a categoria: ");
@@ -135,20 +135,18 @@ public class GerenciamentoLoja {
 		sc.nextLine(); // espera o click ENTER
 
 		System.out.println("-------------------------------");
-		
+
 	}
-	
+
 	public void exibirRelatorioDoCarrinho(Scanner sc) {
-		
+
 		carrinho.exibirResumo();
 		System.out.println("\nPressione ENTER para continuar...");
 		sc.nextLine();
 		sc.nextLine();
 
 		System.out.println("-------------------------------");
-		
+
 	}
-	
-	
 
 }
