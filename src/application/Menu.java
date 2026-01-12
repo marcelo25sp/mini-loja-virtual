@@ -10,8 +10,8 @@ public class Menu {
 		System.out.println();
 		System.out.println("1. Cadastrar produtos");
 		System.out.println("2. Listar produtos");
-		System.out.println("3. Remover produto");
-		System.out.println("4. Editar produto");
+		System.out.println("3. Remover produtos");
+		System.out.println("4. Editar produtos");
 		System.out.println("5. Filtrar produtos");
 		System.out.println("6. Exibir relatório do carrinho");
 		System.out.println("0. Sair");
