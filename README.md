@@ -87,20 +87,27 @@ Valor total: R$ 725.00
 
 src/
 
-├── application
-   ── Main.java
-   ── Menu.java 
-├── entities
-   ── Produto.java
-   ── ProdutoFisico.java
-   ── ProdutoDigital.java
-   ── ProdutoAssinatura.java
-   ── Carrinho.java
-   ── Cliente.java
-├── entities.enums
-   ── Categoria.java
-└── services
-   ── GerenciamentoLoja.java
+ ── application
+ 
+   - Main.java
+   - Menu.java
+     
+── entities
+
+   - Produto.java
+   - ProdutoFisico.java
+   - ProdutoDigital.java
+   - ProdutoAssinatura.java
+   - Carrinho.java
+   - Cliente.java
+     
+ ── entities.enums
+
+   - Categoria.java
+   
+── services
+
+   - GerenciamentoLoja.java
 
 ---
 
