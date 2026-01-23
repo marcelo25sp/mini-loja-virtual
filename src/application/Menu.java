@@ -16,7 +16,7 @@ public class Menu {
 		System.out.println("6. Exibir relatório do carrinho");
 		System.out.println("0. Sair");
 		System.out.println("------------------------------------");
-		System.out.print("Entre com a opção desejada: ");
+		
 		
 	}
 
