@@ -3,6 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.enums.Categoria;
 import services.GerenciamentoLoja;
 
 public class Main {
@@ -100,6 +101,17 @@ public class Main {
 	public static void pausar(Scanner sc) {
 		System.out.println("\nPressione ENTER para continuar...");
 		sc.nextLine();
+	}
+	
+	public static Categoria lerCategoria(Scanner sc) {
+	    while (true) {
+	        try {
+	            System.out.print("Categoria (ELETRONICO/ROUPA/LIVRO/SERVICO/SOFTWARE): ");
+	            return Categoria.valueOf(sc.nextLine().toUpperCase());
+	        } catch (IllegalArgumentException e) {
+	            System.out.println("Categoria inválida! Tente novamente.");
+	        }
+	    }
 	}
 
 }
