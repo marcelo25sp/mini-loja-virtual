@@ -15,15 +15,15 @@ public class Main {
 		Menu menu = new Menu();
 		GerenciamentoLoja gerenciamento = new GerenciamentoLoja();
 
-		int opcao = -1; // atribuição provisória à variável opção para forçar e entrada no looping
+		boolean executando = true; // atribuição para a entrada no looping do menu principal
 		int proximoId = 1;
 
 		// looping de interação com o usuário
-		while (opcao != 0) {
+		while (executando) {
 			
 			// exibição do menu
 			menu.exibirMenuPrincipal();
-			opcao = sc.nextInt();
+			int opcao = sc.nextInt();
 			System.out.println();
 
 			switch (opcao) {
@@ -67,6 +67,7 @@ public class Main {
 			case 0:
 				
 				System.out.println("Saindo do programa...");
+				executando = false;
 
 				break;
 
