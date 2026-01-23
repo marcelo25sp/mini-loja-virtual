@@ -95,6 +95,7 @@ public class GerenciamentoLoja {
 
 		if (produto == null) {
 			System.out.println("Produto não encontrado!");
+			return;
 		}
 
 		System.out.print("Novo nome: ");
