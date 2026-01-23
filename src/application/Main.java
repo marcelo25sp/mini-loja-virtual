@@ -84,5 +84,22 @@ public class Main {
 		sc.close();
 
 	}
+	
+	public static int lerOpcao(Scanner sc) {
+		while(true) {
+			try {
+				System.out.print("Entre com a opção desejada: ");
+				int opcao = Integer.parseInt(sc.nextLine());
+				return opcao;
+			}catch(NumberFormatException e) {
+				System.out.println("Entrada Inválida. Digite apenas números.");
+			}
+		}
+	}
+	
+	public static void pausar(Scanner sc) {
+		System.out.println("\nPressione ENTER para continuar...");
+		sc.nextLine();
+	}
 
 }
