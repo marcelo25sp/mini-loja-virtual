@@ -9,6 +9,7 @@ import entities.ProdutoAssinatura;
 import entities.ProdutoDigital;
 import entities.ProdutoFisico;
 import entities.enums.Categoria;
+import utils.InputUtils;
 
 public class GerenciamentoLoja {
 
@@ -28,7 +29,7 @@ public class GerenciamentoLoja {
 		int quantidade = sc.nextInt();
 		sc.nextLine();
 		System.out.print("Categoria: (ELETRONICO/ROUPA/LIVRO/SOFTWARE/SERVICO) ");
-		Categoria categoria = Main.lerCategoria(sc);
+		Categoria categoria = InputUtils.lerCategoria(sc);
 
 		if (tipo == 1) {
 			System.out.print("Peso: (g) ");
