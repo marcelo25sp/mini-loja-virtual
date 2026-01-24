@@ -20,5 +20,22 @@ public class InputUtils {
 		}
 		
 	}
+	
+	public static double lerDouble(Scanner sc, String mensagem) {
+		double valor;
+		
+		while(true) {
+			System.out.print(mensagem);
+			if(sc.hasNextDouble()) {
+				valor = sc.nextDouble();
+				sc.nextLine(); // limpa o buffer
+				return valor;
+			}else {
+				System.out.println("Entrada inválida. Digite um número do tipo Double.");
+				sc.nextLine();
+			}
+		}
+		
+	}
 
 }
