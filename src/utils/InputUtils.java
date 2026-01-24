@@ -2,6 +2,8 @@ package utils;
 
 import java.util.Scanner;
 
+import entities.enums.Categoria;
+
 public class InputUtils {
 	
 	public static int lerInt(Scanner sc, String mensagem) {
@@ -41,6 +43,19 @@ public class InputUtils {
 	public static String lerString(Scanner sc, String mensagem) {
 		System.out.print(mensagem);
 		return sc.nextLine();
+	}
+	
+	public static Categoria lerCategoria(Scanner sc) {
+		while(true) {
+			System.out.print("Categoria (ELETRONICO/ROUPA/LIVRO/SERVICO/SOFTWARE): ");
+			try {
+				return Categoria.valueOf(sc.nextLine().toUpperCase());
+			}catch(IllegalArgumentException e) {
+				System.out.println("Categoria inválida. Tente novamente!");
+			}
+			
+		}
+		
 	}
 
 }
