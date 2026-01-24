@@ -37,5 +37,10 @@ public class InputUtils {
 		}
 		
 	}
+	
+	public static String lerString(Scanner sc, String mensagem) {
+		System.out.print(mensagem);
+		return sc.nextLine();
+	}
 
 }
