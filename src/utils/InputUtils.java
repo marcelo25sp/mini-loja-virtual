@@ -2,6 +2,7 @@ package utils;
 
 import java.util.Scanner;
 
+import dto.ProdutoDTO;
 import entities.enums.Categoria;
 
 public class InputUtils {
@@ -56,6 +57,16 @@ public class InputUtils {
 			
 		}
 		
+	}
+	
+	public static ProdutoDTO lerProdutoDTO(Scanner sc) {
+		
+		String nome = lerString(sc, "Nome do Produto: ");
+		double preco = lerDouble(sc, "Preço do produto: ");
+		int quantidade = lerInt(sc, "Quantidade: ");
+		Categoria categoria = lerCategoria(sc);
+		
+		return new ProdutoDTO(nome, preco, quantidade, categoria);
 	}
 
 }

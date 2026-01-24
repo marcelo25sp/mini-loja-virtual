@@ -9,6 +9,8 @@ public abstract class Produto {
 	private double preco;
 	private int quantidade;
 	private Categoria categoria;
+	
+
 
 	public Produto(String nome, double preco, int quantidade, Categoria categoria) {
 		this.nome = nome;
