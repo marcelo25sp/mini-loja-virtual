@@ -2,6 +2,7 @@ package services;
 
 import java.util.Scanner;
 
+import application.Main;
 import entities.Carrinho;
 import entities.Produto;
 import entities.ProdutoAssinatura;
@@ -27,7 +28,7 @@ public class GerenciamentoLoja {
 		int quantidade = sc.nextInt();
 		sc.nextLine();
 		System.out.print("Categoria: (ELETRONICO/ROUPA/LIVRO/SOFTWARE/SERVICO) ");
-		Categoria categoria = Categoria.valueOf(sc.next().toUpperCase());
+		Categoria categoria = Main.lerCategoria(sc);
 
 		if (tipo == 1) {
 			System.out.print("Peso: (g) ");
