@@ -2,7 +2,7 @@ package services;
 
 import java.util.Scanner;
 
-import application.Main;
+import dto.ProdutoDTO;
 import entities.Carrinho;
 import entities.Produto;
 import entities.ProdutoAssinatura;
@@ -17,44 +17,16 @@ public class GerenciamentoLoja {
 
 	public void cadastrarProdutos(Scanner sc) {
 
-		System.out.println("Cadastrar Produto: (1. Físico/ 2. Digital/ 3. Assinatura) ");
-		System.out.print("Escolha o tipo de produto: ");
-		int tipo = sc.nextInt();
-		sc.nextLine();
-		System.out.print("Nome: ");
-		String nome = sc.nextLine();
-		System.out.print("Preço: (R$) ");
-		double preco = sc.nextDouble();
-		System.out.print("Quantidade: (unidades) ");
-		int quantidade = sc.nextInt();
-		sc.nextLine();
-		System.out.print("Categoria: (ELETRONICO/ROUPA/LIVRO/SOFTWARE/SERVICO) ");
-		Categoria categoria = InputUtils.lerCategoria(sc);
+		System.out.println("Cadastrar Produto:");
+		System.out.println("1. Físico | 2. Digital | 3. Assinatura");
 
-		if (tipo == 1) {
-			System.out.print("Peso: (g) ");
-			double peso = sc.nextDouble();
-			System.out.print("Custo do frete: (R$) ");
-			double custoFrete = sc.nextDouble();
-			ProdutoFisico produto = new ProdutoFisico(nome, preco, quantidade, categoria, peso, custoFrete);
-			carrinho.adicionarProduto(produto);
-		} else if (tipo == 2) {
-			System.out.print("Tamanho do arquivo (MB): ");
-			double tamanhoArquivo = sc.nextDouble();
-			System.out.print("Taxa digital: (R$) ");
-			double taxaDigital = sc.nextDouble();
-			ProdutoDigital produto = new ProdutoDigital(nome, preco, quantidade, categoria, tamanhoArquivo,
-					taxaDigital);
-			carrinho.adicionarProduto(produto);
-		} else {
-			System.out.print("Meses: ");
-			int meses = sc.nextInt();
-			System.out.print("Desconto por mês: (R$) ");
-			double descontoPorMes = sc.nextDouble();
-			ProdutoAssinatura produto = new ProdutoAssinatura(nome, preco, quantidade, categoria, meses,
-					descontoPorMes);
-			carrinho.adicionarProduto(produto);
-		}
+		int tipo = InputUtils.lerInt(sc, "Escolha o tipo: ");
+
+		ProdutoDTO dto = InputUtils.lerProdutoDTO(sc);
+
+		Produto produto = criarProdutoPeloDTO(tipo, dto, sc);
+
+		carrinho.adicionarProduto(produto);
 
 		System.out.println("Produto cadastrado com sucesso!");
 		System.out.println("-------------------------------");
@@ -152,4 +124,31 @@ public class GerenciamentoLoja {
 
 	}
 
+	private Produto criarProdutoPeloDTO(int tipo, ProdutoDTO dto, Scanner sc) {
+
+		if (tipo == 1) {
+			double peso = InputUtils.lerDouble(sc, "Peso (g): ");
+			double custoFrete = InputUtils.lerDouble(sc, "Custo do frete: ");
+
+			return new ProdutoFisico(dto.getNome(), dto.getPreco(), dto.getQuantidade(), dto.getCategoria(), peso,
+					custoFrete);
+
+		} else if (tipo == 2) {
+			double tamanhoArquivo = InputUtils.lerDouble(sc, "Tamanho do arquivo (MB): ");
+			double taxaDigital = InputUtils.lerDouble(sc, "Taxa digital: ");
+
+			return new ProdutoDigital(dto.getNome(), dto.getPreco(), dto.getQuantidade(), dto.getCategoria(),
+					tamanhoArquivo, taxaDigital);
+
+		} else {
+
+			int meses = InputUtils.lerInt(sc, "Meses: ");
+			double desconto = InputUtils.lerDouble(sc, "Desconto por mês: ");
+
+			return new ProdutoAssinatura(dto.getNome(), dto.getPreco(), dto.getQuantidade(), dto.getCategoria(), meses,
+					desconto);
+
+		}
+
+	}
 }
