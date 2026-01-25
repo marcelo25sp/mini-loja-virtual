@@ -61,39 +61,29 @@ public class GerenciamentoLoja {
 
 	public void editarProdutos(Scanner sc) {
 
-		System.out.print("Informe o ID do produto: ");
-		int idEditar = sc.nextInt();
-		sc.nextLine();
+		int id = InputUtils.lerInt(sc, "Informe o ID do produto a ser editado: ");
 
-		Produto produto = carrinho.buscarProdutoPorId(idEditar);
+		Produto produto = carrinho.buscarProdutoPorId(id);
 
 		if (produto == null) {
 			System.out.println("Produto não encontrado!");
 			return;
 		}
 
-		System.out.print("Novo nome: ");
-		String novoNome = sc.nextLine();
+		System.out.println("Informe os novos dados do produto:");
 
-		System.out.print("Novo preço: ");
-		double novoPreco = sc.nextDouble();
+		ProdutoDTO dto = InputUtils.lerProdutoDTO(sc);
 
-		System.out.print("Nova quantidade: ");
-		int novaQuantidade = sc.nextInt();
-		sc.nextLine();
-
-		System.out.print("Categoria: (ELETRONICO/SERVICO/ROUPA/SERVICO/SOFTWARE) ");
-		Categoria novaCategoria = Categoria.valueOf(sc.next().toUpperCase());
-
-		boolean editado = carrinho.editarProduto(idEditar, novoNome, novoPreco, novaQuantidade, novaCategoria);
+		boolean editado = carrinho.editarProduto(id, dto.getNome(), dto.getPreco(), dto.getQuantidade(),
+				dto.getCategoria());
 
 		if (editado) {
 			System.out.println("Produto atualizado com sucesso!");
 		} else {
-			System.out.println("Produto não encontrado!");
+			System.out.println("Erro ao atualizar o produto!");
 		}
-		System.out.println("-------------------------------");
 
+		System.out.println("-------------------------------");
 	}
 
 	public void filtrarProdutos(Scanner sc) {
