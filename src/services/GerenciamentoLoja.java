@@ -91,7 +91,7 @@ public class GerenciamentoLoja {
 		System.out.println("(ELETRONICO | ROUPA | SERVICO | LIVRO | SOFTWARE)");
 		System.out.print("Digite a categoria: ");
 
-		Categoria categoria = Categoria.valueOf(sc.next().toUpperCase());
+		Categoria categoria = InputUtils.lerCategoria(sc);
 		carrinho.filtrarPorCategoria(categoria);
 
 		System.out.println("\nPressione ENTER para continuar...");
