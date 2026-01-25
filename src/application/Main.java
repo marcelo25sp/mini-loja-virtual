@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import entities.enums.Categoria;
 import services.GerenciamentoLoja;
+import utils.InputUtils;
 
 public class Main {
 
@@ -23,7 +24,7 @@ public class Main {
 
 			// exibição do menu
 			menu.exibirMenuPrincipal();
-			int opcao = lerOpcao(sc);
+			int opcao = InputUtils.lerInt(sc, "Entre com a opção: ");
 			System.out.println();
 
 			switch (opcao) {
@@ -31,42 +32,42 @@ public class Main {
 			case 1:
 
 				gerenciamento.cadastrarProdutos(sc);
-				pausar(sc);
+				InputUtils.pausar(sc);
 
 				break;
 
 			case 2:
 
 				gerenciamento.listarProdutos(sc);
-				pausar(sc);
+				InputUtils.pausar(sc);
 
 				break;
 
 			case 3:
 
 				gerenciamento.removerProdutos(sc);
-				pausar(sc);
+				InputUtils.pausar(sc);
 
 				break;
 
 			case 4:
 
 				gerenciamento.editarProdutos(sc);
-				pausar(sc);
+				InputUtils.pausar(sc);
 
 				break;
 
 			case 5:
 
 				gerenciamento.filtrarProdutos(sc);
-				pausar(sc);
+				InputUtils.pausar(sc);
 
 				break;
 
 			case 6:
 
 				gerenciamento.exibirRelatorioDoCarrinho(sc);
-				pausar(sc);
+				InputUtils.pausar(sc);
 
 				break;
 
@@ -80,7 +81,7 @@ public class Main {
 			default:
 
 				System.out.println("Opção inválida!");
-				pausar(sc);
+				InputUtils.pausar(sc);
 
 				break;
 
@@ -91,33 +92,5 @@ public class Main {
 		sc.close();
 
 	}
-
-	public static int lerOpcao(Scanner sc) {
-		while (true) {
-			try {
-				System.out.print("Entre com a opção desejada: ");
-				int opcao = Integer.parseInt(sc.nextLine());
-				return opcao;
-			} catch (NumberFormatException e) {
-				System.out.println("Entrada Inválida. Digite apenas números.");
-			}
-		}
-	}
-
-	public static void pausar(Scanner sc) {
-		System.out.println("\nPressione ENTER para continuar...");
-		sc.nextLine();
-	}
-
-	public static Categoria lerCategoria(Scanner sc) {
-		while (true) {
-			try {
-				System.out.print("Categoria (ELETRONICO/ROUPA/LIVRO/SERVICO/SOFTWARE): ");
-				return Categoria.valueOf(sc.nextLine().toUpperCase());
-			} catch (IllegalArgumentException e) {
-				System.out.println("Categoria inválida! Tente novamente.");
-			}
-		}
-	}
-
+	
 }

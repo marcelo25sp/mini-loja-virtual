@@ -68,5 +68,10 @@ public class InputUtils {
 		
 		return new ProdutoDTO(nome, preco, quantidade, categoria);
 	}
+	
+	public static void pausar(Scanner sc) {
+	    System.out.println("\nPressione ENTER para continuar...");
+	    sc.nextLine();
+	}
 
 }
