@@ -1,4 +1,4 @@
-# 🛒 Mini Loja Virtual – Java (Console)
+# 🛒 Mini Loja Virtual (V2.0) – Java (Console)
 
 Projeto desenvolvido em **Java** com foco em **Programação Orientada a Objetos**, simulando o funcionamento de uma **mini loja virtual em ambiente de console**.
 
