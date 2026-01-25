@@ -20,7 +20,6 @@ demonstrando herança, composição, uso de DTO e separação de responsabilidad
                         │     Menu      │
                         └───────────────┘
 
-
 ┌──────────────────┐      usa        ┌────────────────────┐
 │  Gerenciamento   │◄──────────────►│      Carrinho       │
 │      Loja        │                 │ - List<Produto>    │
@@ -53,3 +52,6 @@ demonstrando herança, composição, uso de DTO e separação de responsabilidad
 ┌──────────────────┐
 │   Categoria      │  <<enum>>
 └──────────────────┘
+
+
+---
