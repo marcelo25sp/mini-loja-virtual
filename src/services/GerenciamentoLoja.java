@@ -45,8 +45,7 @@ public class GerenciamentoLoja {
 
 	public void removerProdutos(Scanner sc) {
 
-		System.out.print("Informe o ID do produto a ser removido: ");
-		int id = sc.nextInt();
+		int id = InputUtils.lerInt(sc, "Informe o ID do produto a ser removido: ");
 
 		boolean removido = carrinho.removerProdutoPorId(id);
 
