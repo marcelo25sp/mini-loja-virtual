@@ -1,3 +1,16 @@
+  # 📊 Diagrama de Classes – Mini Loja Virtual
+
+Este diagrama representa a estrutura de classes do projeto **Mini Loja Virtual**, 
+demonstrando herança, composição, uso de DTO e separação de responsabilidades.
+
+---
+
+## 🧩 Visão Geral do Diagrama
+
+
+  
+  
+  
                         ┌───────────────┐
                         │     Main      │
                         └───────┬───────┘
