@@ -8,9 +8,10 @@ demonstrando herança, composição, uso de DTO e separação de responsabilidad
 ## 🧩 Visão Geral do Diagrama
 
 
+
   
   
-  
+  ```
                         ┌───────────────┐
                         │     Main      │
                         └───────┬───────┘
@@ -53,5 +54,6 @@ demonstrando herança, composição, uso de DTO e separação de responsabilidad
 │   Categoria      │  <<enum>>
 └──────────────────┘
 
+```
 
 ---
