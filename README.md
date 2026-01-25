@@ -2,9 +2,10 @@
 
 Projeto desenvolvido em **Java** com foco em **Programação Orientada a Objetos**, simulando o funcionamento de uma **mini loja virtual em ambiente de console**.
 
-O sistema permite o cadastro e gerenciamento de diferentes tipos de produtos, aplicação de regras de negócio específicas e interação com o usuário através de um menu dinâmico.
+O sistema simula o gerenciamento de uma loja virtual, permitindo o cadastro, edição, remoção, listagem e filtragem de produtos, além do cálculo do valor total do carrinho. O sistema permite o cadastro e gerenciamento de diferentes tipos de produtos, aplicação de regras de negócio específicas e interação com o usuário através de um menu dinâmico. 
 
 Este projeto faz parte da minha evolução prática em Java e organização de código em camadas, seguindo boas práticas de desenvolvimento.
+
 
 ---
 
@@ -20,7 +21,7 @@ Este projeto faz parte da minha evolução prática em Java e organização de c
 - 🗂️ Filtro de produtos por categoria
 - 🧾 Exibição de resumo do carrinho
 - 🧠 Cálculo automático do preço final com regras específicas por tipo de produto
-- 🧱 Separação de responsabilidades (Menu, Regras de Negócio e Entidades)
+- 🧱 Separação de responsabilidades (Menu Interatico com pausas controladas, Regras de Negócio e Entidades)
 
 ---
 
@@ -33,6 +34,8 @@ Este projeto faz parte da minha evolução prática em Java e organização de c
 - Encapsulamento
 - Separação de responsabilidades
 - Organização em pacotes (`entities`, `services`, `application`)
+- Padrão DTO (centraliza a entrada e saída de dados e facilita a evolução/manutenção do sistema)
+- Classe Utilitária (centraliza leitura e validação de dados, UX no console e método de pausa)
 - Boas práticas de código limpo
 - Versionamento com Git (commits semânticos em português)
 
@@ -109,6 +112,14 @@ src/
 
    - GerenciamentoLoja.java
 
+── dto   
+
+   - ProdutoDTO.java 
+
+── services
+
+   - InputUtils.java
+
 ---
 
 
@@ -135,17 +146,20 @@ application.Main
 
 🔄 Versionamento
 
-Versão atual: 1.0
+Versão atual: 2.0
 
 Próxima versão planejada:
 
-DTOs para exibição
+- Persistência de dados (arquivo ou banco)
 
-Melhorias de UX no menu
+- Testes unitários
 
-Validações mais robustas
+- Interface gráfica ou API Rest
 
-Evolução da arquitetura conforme novos aprendizados
+- Refatoração para uso de interfaces
+
+- Relatórios mais detalhados
+
 
 📌 Autor
 
