@@ -17,18 +17,23 @@ public class GerenciamentoLoja {
 
 	public void cadastrarProdutos(Scanner sc) {
 
-		System.out.println("Cadastrar Produto:");
-		System.out.println("1. Físico | 2. Digital | 3. Assinatura");
+		try {
+			System.out.println("Cadastrar Produto:");
+			System.out.println("1. Físico | 2. Digital | 3. Assinatura");
 
-		int tipo = InputUtils.lerInt(sc, "Escolha o tipo: ");
+			int tipo = InputUtils.lerInt(sc, "Escolha o tipo: ");
 
-		ProdutoDTO dto = InputUtils.lerProdutoDTO(sc);
+			ProdutoDTO dto = InputUtils.lerProdutoDTO(sc);
 
-		Produto produto = criarProdutoPeloDTO(tipo, dto, sc);
+			Produto produto = criarProdutoPeloDTO(tipo, dto, sc);
 
-		carrinho.adicionarProduto(produto);
+			carrinho.adicionarProduto(produto);
 
-		System.out.println("Produto cadastrado com sucesso!");
+			System.out.println("Produto cadastrado com sucesso!");
+		} catch (RuntimeException e) {
+			System.out.println("Erro: " + e.getMessage());
+		}
+
 		System.out.println("-------------------------------");
 		System.out.println();
 
