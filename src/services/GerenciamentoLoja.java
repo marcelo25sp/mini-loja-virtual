@@ -50,15 +50,20 @@ public class GerenciamentoLoja {
 
 	public void removerProdutos(Scanner sc) {
 
-		int id = InputUtils.lerInt(sc, "Informe o ID do produto a ser removido: ");
+		try {
+			int id = InputUtils.lerInt(sc, "Informe o ID do produto a ser removido: ");
 
-		boolean removido = carrinho.removerProdutoPorId(id);
+			boolean removido = carrinho.removerProdutoPorId(id);
 
-		if (removido) {
-			System.out.println("Produto removido com sucesso!");
-		} else {
-			System.out.println("Produto não encontrado!");
+			if (removido) {
+				System.out.println("Produto removido com sucesso!");
+			} else {
+				System.out.println("Produto não encontrado!");
+			}
+		} catch (RuntimeException e) {
+			System.out.println("Erro: " + e.getMessage());
 		}
+
 		System.out.println("-------------------------------");
 
 	}
