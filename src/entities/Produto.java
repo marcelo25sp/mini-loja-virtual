@@ -62,10 +62,16 @@ public abstract class Produto {
 	}
 
 	public void setPreco(double preco) {
+		if(preco <= 0.0) {
+			throw new RegraNegocioException("O preço do produto não pode ser menor ou igual a R$ 0.00!");
+		}		
 		this.preco = preco;
 	}
 
 	public void setQuantidade(int quantidade) {
+		if(quantidade < 0) {
+			throw new RegraNegocioException("A quantidade não pode ser menor que zero!");
+		}
 		this.quantidade = quantidade;
 	}
 
