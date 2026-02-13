@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entities.enums.Categoria;
+import entities.exceptions.RegraNegocioException;
 
 public class Carrinho {
 	
@@ -44,7 +45,7 @@ public class Carrinho {
 				return p;
 			}
 		}
-		return null;
+		throw new RegraNegocioException("Produto com id não encontrado.");
 	}
 	
 	public boolean removerProdutoPorId(int id) {
