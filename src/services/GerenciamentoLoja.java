@@ -69,7 +69,8 @@ public class GerenciamentoLoja {
 	}
 
 	public void editarProdutos(Scanner sc) {
-
+		
+		try {
 		int id = InputUtils.lerInt(sc, "Informe o ID do produto a ser editado: ");
 
 		Produto produto = carrinho.buscarProdutoPorId(id);
@@ -90,6 +91,9 @@ public class GerenciamentoLoja {
 			System.out.println("Produto atualizado com sucesso!");
 		} else {
 			System.out.println("Erro ao atualizar o produto!");
+		}
+		}catch(RuntimeException e) {
+			System.out.println("Erro: " + e.getMessage());
 		}
 
 		System.out.println("-------------------------------");
