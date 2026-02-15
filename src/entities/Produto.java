@@ -1,7 +1,8 @@
 package entities;
 
 import entities.enums.Categoria;
-import entities.exceptions.RegraNegocioException;
+import entities.exceptions.ProdutoNaoEncontradoException;
+
 
 public abstract class Produto {
 
@@ -16,15 +17,15 @@ public abstract class Produto {
 	public Produto(String nome, double preco, int quantidade, Categoria categoria) {
 		
 		if(nome == null || nome.trim().isEmpty()) {
-			throw new RegraNegocioException("Nome do produto não pode ser vazio!");
+			throw new ProdutoNaoEncontradoException("Nome do produto não pode ser vazio!");
 		}
 		
 		if(preco <= 0) {
-			throw new RegraNegocioException("O preço não pode ser menor ou igual a R$ 0.00!");
+			throw new ProdutoNaoEncontradoException("O preço não pode ser menor ou igual a R$ 0.00!");
 		}
 		
 		if(quantidade < 0) {
-			throw new RegraNegocioException("A quantidade não pode ser menor que zero!");
+			throw new ProdutoNaoEncontradoException("A quantidade não pode ser menor que zero!");
 		}
 		
 		this.nome = nome;
@@ -63,14 +64,14 @@ public abstract class Produto {
 
 	public void setPreco(double preco) {
 		if(preco <= 0.0) {
-			throw new RegraNegocioException("O preço do produto não pode ser menor ou igual a R$ 0.00!");
+			throw new ProdutoNaoEncontradoException("O preço do produto não pode ser menor ou igual a R$ 0.00!");
 		}		
 		this.preco = preco;
 	}
 
 	public void setQuantidade(int quantidade) {
 		if(quantidade < 0) {
-			throw new RegraNegocioException("A quantidade não pode ser menor que zero!");
+			throw new ProdutoNaoEncontradoException("A quantidade não pode ser menor que zero!");
 		}
 		this.quantidade = quantidade;
 	}
