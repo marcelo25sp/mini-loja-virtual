@@ -3,7 +3,6 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.enums.Categoria;
 import services.GerenciamentoLoja;
 import utils.InputUtils;
 
