@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import entities.ProdutoAssinatura;
 import entities.ProdutoDigital;
 import entities.ProdutoFisico;
 import entities.enums.Categoria;
@@ -30,6 +31,24 @@ public class ProdutoTest {
 		
 		// (50.0 * 1) + 10.0 = 60.0
 		assertEquals(60.0, total);
+	}
+	
+	@Test
+	void deveCalcularPrecoFinalProdutoAssinatura() {
+		
+		ProdutoAssinatura produto = new ProdutoAssinatura(
+				"Netflix", 
+				50.0, // Mensalidade
+				1, // quantidade
+				Categoria.SERVICO, 
+				12, // meses
+				5.0 // desconto mensal
+				);
+		
+		double total = produto.calcularPrecoFinal();
+		
+		// (50.0 * 1 * 12) - (5.0 * 12) = 540.0
+		assertEquals(540.0, total);
 	}
 
 }
