@@ -1,23 +1,24 @@
 package entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import entities.enums.Categoria;
-import entities.exceptions.RegraNegocioException;
+import entities.exceptions.ProdutoNaoEncontradoException;
 
 public class Carrinho {
 	
 	public Carrinho() {		
 	}
 
-	private List<Produto> itens = new ArrayList<>();
+	private Map<Integer, Produto> itens = new HashMap<>();
 	private int proximoId = 1;
 
 	public void adicionarProduto(Produto produto) {
 		produto.setId(proximoId);
+		itens.put(proximoId, produto);
 		proximoId++;
-		itens.add(produto);
+		
 	}
 
 	public void listarProdutos() {
@@ -40,25 +41,21 @@ public class Carrinho {
 	}
 	
 	public Produto buscarProdutoPorId(int id) {
+
 		for(Produto p : itens) {
 			if(p.getId() == id) {
 				return p;
 			}
 		}
-		throw new RegraNegocioException("Produto com id não encontrado.");
+		
+		throw new RegraNegocioException("Produto não encontrado.");
 	}
 	
-	public boolean removerProdutoPorId(int id) {
-		Produto produto = buscarProdutoPorId(id);
+
 		
-		if(produto != null) {
-			itens.remove(produto);
-			return true;
-		}
 		
-		return false;				
-				
-	}
+		
+	
 	
 	public boolean editarProduto(int id, String nome, double preco, int quantidade, Categoria categoria) {
 		Produto produto = buscarProdutoPorId(id);
