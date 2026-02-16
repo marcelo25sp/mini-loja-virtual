@@ -84,7 +84,7 @@ public abstract class Produto {
 
 	@Override
 	public String toString() {
-		return String.format("Código: %d | Produto: %s | Categoria: %s | Quantidade: %d | Preço unitário: R$ %.2f%n ", id, nome, categoria, quantidade, preco);
+		return String.format("Código: %d | Produto: %s | Categoria: %s | Quantidade: %d | Preço unitário: R$ %.2f", id, nome, categoria, quantidade, preco);
 	}
 
 }
