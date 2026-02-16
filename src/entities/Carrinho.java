@@ -41,14 +41,12 @@ public class Carrinho {
 	}
 
 	public Produto buscarProdutoPorId(int id) {
-
-		for (Produto p : itens.values()) {
-			if (p.getId() == id) {
-				return p;
-			}
+		Produto produto = itens.get(id);
+		if (produto == null) {
+			throw new ProdutoNaoEncontradoException("Produto não encontrado.");
 		}
+		return produto;
 
-		throw new ProdutoNaoEncontradoException("Produto não encontrado.");
 	}
 
 	public boolean editarProduto(int id, String nome, double preco, int quantidade, Categoria categoria) {
@@ -79,16 +77,17 @@ public class Carrinho {
 			System.out.println("Nenhum produto encontrado com a categoria solicitada!");
 		}
 	}
-	
-	public void removerProdutoPorId(int id){
-		
+
+	public void removerProdutoPorId(int id) {
+
 		Produto produto = itens.remove(id);
-		
-		if(produto == null) {
+
+		if (produto == null) {
 			throw new ProdutoNaoEncontradoException("Produto não encontrado.");
 		}
-		
+
 	}
+
 	public void exibirResumo() {
 		if (itens.isEmpty()) {
 			System.out.println("Carrinho vazio");
