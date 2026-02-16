@@ -9,6 +9,7 @@ import entities.ProdutoAssinatura;
 import entities.ProdutoDigital;
 import entities.ProdutoFisico;
 import entities.enums.Categoria;
+import entities.exceptions.ProdutoNaoEncontradoException;
 import utils.InputUtils;
 
 public class GerenciamentoLoja {
@@ -50,18 +51,13 @@ public class GerenciamentoLoja {
 
 	public void removerProdutos(Scanner sc) {
 
+		int id = InputUtils.lerInt(sc, "Informe o ID do produto a ser removido: ");
+
 		try {
-			int id = InputUtils.lerInt(sc, "Informe o ID do produto a ser removido: ");
-
-			boolean removido = carrinho.removerProdutoPorId(id);
-
-			if (removido) {
-				System.out.println("Produto removido com sucesso!");
-			} else {
-				System.out.println("Produto não encontrado!");
-			}
-		} catch (RuntimeException e) {
-			System.out.println("Erro: " + e.getMessage());
+			carrinho.removerProdutoPorId(id);
+			System.out.println("Produto removido com sucesso!");
+		} catch (ProdutoNaoEncontradoException e) {
+			System.out.println(e.getMessage());
 		}
 
 		System.out.println("-------------------------------");
@@ -69,30 +65,30 @@ public class GerenciamentoLoja {
 	}
 
 	public void editarProdutos(Scanner sc) {
-		
+
 		try {
-		int id = InputUtils.lerInt(sc, "Informe o ID do produto a ser editado: ");
+			int id = InputUtils.lerInt(sc, "Informe o ID do produto a ser editado: ");
 
-		Produto produto = carrinho.buscarProdutoPorId(id);
+			Produto produto = carrinho.buscarProdutoPorId(id);
 
-		if (produto == null) {
-			System.out.println("Produto não encontrado!");
-			return;
-		}
+			if (produto == null) {
+				System.out.println("Produto não encontrado!");
+				return;
+			}
 
-		System.out.println("Informe os novos dados do produto:");
+			System.out.println("Informe os novos dados do produto:");
 
-		ProdutoDTO dto = InputUtils.lerProdutoDTO(sc);
+			ProdutoDTO dto = InputUtils.lerProdutoDTO(sc);
 
-		boolean editado = carrinho.editarProduto(id, dto.getNome(), dto.getPreco(), dto.getQuantidade(),
-				dto.getCategoria());
+			boolean editado = carrinho.editarProduto(id, dto.getNome(), dto.getPreco(), dto.getQuantidade(),
+					dto.getCategoria());
 
-		if (editado) {
-			System.out.println("Produto atualizado com sucesso!");
-		} else {
-			System.out.println("Erro ao atualizar o produto!");
-		}
-		}catch(RuntimeException e) {
+			if (editado) {
+				System.out.println("Produto atualizado com sucesso!");
+			} else {
+				System.out.println("Erro ao atualizar o produto!");
+			}
+		} catch (RuntimeException e) {
 			System.out.println("Erro: " + e.getMessage());
 		}
 
