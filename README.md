@@ -1,10 +1,11 @@
-# 🛒 Mini Loja Virtual (V2.0) – Java (Console)
+# 🛒 Mini Loja Virtual (V3.0) – Java + JUnit (Console)
 
-Projeto desenvolvido em **Java** com foco em **Programação Orientada a Objetos**, simulando o funcionamento de uma **mini loja virtual em ambiente de console**.
+Projeto desenvolvido em **Java** com foco em **Programação Orientada a Objetos**, arquitetura em camadas e testes unitários com JUnit 5, simulando o funcionamento de uma **mini loja virtual em ambiente de console**.
 
-O sistema simula o gerenciamento de uma loja virtual, permitindo o cadastro, edição, remoção, listagem e filtragem de produtos, além do cálculo do valor total do carrinho. O sistema permite o cadastro e gerenciamento de diferentes tipos de produtos, aplicação de regras de negócio específicas e interação com o usuário através de um menu dinâmico. 
+O sistema simula o gerenciamento de uma loja virtual, permitindo o cadastro, edição, remoção, listagem e filtragem de produtos, além do cálculo do valor total do carrinho. O sistema permite o gerenciamento completo de produtos, aplicação de regras de negócio por tipo de produto e cálculo automático do carrinho, com validações e tratamento de exceções. 
 
-Este projeto faz parte da minha evolução prática em Java e organização de código em camadas, seguindo boas práticas de desenvolvimento.
+Esta versão marca a evolução do projeto com testes automatizados, melhoria de arquitetura e maior robustez do código.
+
 
 
 ---
@@ -22,6 +23,31 @@ Este projeto faz parte da minha evolução prática em Java e organização de c
 - 🧾 Exibição de resumo do carrinho
 - 🧠 Cálculo automático do preço final com regras específicas por tipo de produto
 - 🧱 Separação de responsabilidades (Menu Interatico com pausas controladas, Regras de Negócio e Entidades)
+- ⚠️ Tratamento de exceções customizadas
+- 🧪 Testes unitários com JUnit 5
+- 🧱 Arquitetura organizada em camadas
+
+---
+
+## 🧪 Testes Automatizados (JUnit 5)
+
+Cobertura atual:
+
+✔ Cálculo total do carrinho
+
+✔ Preço final Produto Físico
+
+✔ Preço final Produto Digital
+
+✔ Preço final Produto Assinatura
+
+Os testes garantem:
+
+- Confiabilidade das regras de negócio
+
+- Segurança em refatorações
+
+- Validação automática do sistema
 
 ---
 
@@ -37,7 +63,10 @@ Este projeto faz parte da minha evolução prática em Java e organização de c
 - Padrão DTO (centraliza a entrada e saída de dados e facilita a evolução/manutenção do sistema)
 - Classe Utilitária (centraliza leitura e validação de dados, UX no console e método de pausa)
 - Boas práticas de código limpo
-- Versionamento com Git (commits semânticos em português)
+- Versionamento com Git (commits semânticos)
+- Arquitetura em Camadas (SRP)
+- Tratamento de Exceções Customizadas
+- Testes Unitários (`JUnit 5`)
 
 ---
 
@@ -108,6 +137,10 @@ src/
 
    - Categoria.java
    
+ ── entities.exceptions
+
+   - ProdutoNaoEncontradoException.java
+   
 ── services
 
    - GerenciamentoLoja.java
@@ -119,36 +152,83 @@ src/
 ── services
 
    - InputUtils.java
+   
+── test
+
+   - CarrinhoTest.java
+   - ProdutoTest.java   
+   
+
 
 ---
 
 
----
+
 
 ## ▶️ Como Executar
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-2. Abra o projeto em uma IDE Java (Eclipse, IntelliJ ou VS Code)
+ Clone o repositório;
 
-3. Execute a classe:
+  ```
+    git clone https://github.com/seu-usuario/seu-repositorio.git   
+   ```
+   
+Abra o projeto em uma IDE Java (Eclipse, IntelliJ ou VS Code);
 
-  application.Main
-
-Interaja com o sistema pelo console
+Execute a classe e interaja com o sistema pelo console;
 
 
-```
-application.Main
 
 ```
+	application.Main
+
+```
+
+Rodar os testes: execute as classes: 
+
+```
+	test.CarrinhoTest
+	test.ProdutoTest
+```
+
+
 
 🔄 Versionamento
 
-Versão atual: 2.0
+	Versão atual: 3.0
 
-Próxima versão planejada:
+
+# 🚀Evolução do Projeto
+
+## V1.0
+
+- CRUD básico
+
+- Estrutura inicial
+
+## V2.0
+
+- Polimorfismo
+
+- DTO
+
+- Filtros
+
+- Melhor organização
+
+## V3.0
+
+- Testes unitários (JUnit)
+
+- Exception customizada
+
+- Refatoração
+
+- Arquitetura mais limpa
+
+- Código mais robusto
+
+- Próxima versão planejada:
 
 - Persistência de dados (arquivo ou banco)
 
@@ -160,18 +240,34 @@ Próxima versão planejada:
 
 - Relatórios mais detalhados
 
+## 🚀 Próximas Evoluções (Roadmap)
 
-📌 Autor
+- Persistência em arquivo ou banco de dados
 
-Marcelo Nascimento
-Estudante de Análise e Desenvolvimento de Sistemas
-Foco em Backend Java ☕
+- Interface gráfica ou API REST (Spring Boot)
 
-🔗 LinkedIn: https://www.linkedin.com/in/marcelo-nascimento-gomes
+- Uso de Interfaces e SOLID completo
 
-💻 GitHub: https://github.com/marcelo25sp
+- Testes mais avançados (Mockito)
 
-⭐ Considerações Finais
+- Relatórios mais completos
+
+- Sistema de múltiplos clientes
+
+- Logging e tratamento global de exceções
+
+
+##📌 Autor
+
+- **Marcelo Nascimento**
+- Estudante de Análise e Desenvolvimento de Sistemas
+- Foco em Backend Java ☕
+
+🔗 **LinkedIn:** https://www.linkedin.com/in/marcelo-nascimento-gomes
+
+💻 **GitHub:** https://github.com/marcelo25sp
+
+##⭐ Considerações Finais
 
 Este projeto representa uma etapa importante da minha evolução como desenvolvedor Java, reforçando conceitos fundamentais de POO, organização de código e boas práticas.
 
